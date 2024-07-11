@@ -1,0 +1,351 @@
+
+/* Set a background color anf font for the entire page */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+  margin: 0px;
+  padding: 0%;
+  height: 100%;
+}
+
+.header{
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin: auto;
+  font-size: 25px;
+}
+
+.logo{
+  width: 20%;
+  border-radius: 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  /* Light theme styles go here */
+  .header {
+    color: #3a3a3a;
+    background-color: #deefff;
+  }
+
+  .container{
+    background-image: linear-gradient(#deefff 0% ,#f3f3f3 50%);
+  }
+
+  .slide_heading{
+    color: #3a3a3a;
+  }
+
+  .modal{
+    background-color: #fff;
+  }
+
+  .slide_prev, .slide_next {
+    color: #000000;
+  }
+  
+  .slide_prev:hover, .slide_next:hover {
+    background-color: #0000009f;
+    color: #ffffff;
+    cursor: pointer;
+  }
+
+  .footer {
+    color: #3a3a3a;
+    background-color: #f3f3f3;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  /* Dark theme styles go here */
+  .header {
+    color: #eee;
+    background-color: #112334;
+  }
+  
+  .container{
+    background-image: linear-gradient(#112334 30% ,#121212 90%);
+  }
+
+  .slide_heading{
+    color: #eee;
+  }
+
+  .modal{
+    background-color: #121212;
+    color: #eee;
+  }
+
+  .slide_prev, .slide_next {
+    color: #ffffff;
+  }
+  
+  .slide_prev:hover, .slide_next:hover {
+    background-color: #ffffff9f;
+    color: #000000;
+    cursor: pointer;
+  }
+
+  .footer {
+    color: #eee;
+    background-color: #121212;
+  }
+}
+
+.container {
+  overflow: hidden;
+}
+
+.carousel_ontainer {
+  position: relative; /*nr*/
+  max-width: none;
+  z-index: 1;
+}
+
+.slide_prev, .slide_next {
+  inline-size: none;
+  cursor: pointer;
+  position: absolute;
+  top: 340px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  font-size: 90px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+  z-index: 2;
+}
+
+.slide_prev {
+  left:5%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* Position the "next button" to the right */
+.slide_next {
+  right: 5%;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.slides{
+  display: flex;
+  width: 90%;
+  transition: transform 0.5s ease-in-out;
+  margin: auto;
+}
+
+/*slide for columns*/ 
+.slide {
+  flex: 0 0 100%;
+  z-index: 1;
+}
+
+.slide_heading{
+  margin-bottom: 50px;
+  font-size: 70px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.shorts {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  left: 15%;
+  width: 70%;
+
+}
+
+.short {
+  max-width: 310px;
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin: auto;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.short_img{
+  height: 100%;
+  border-radius: 10px;
+}
+
+.short_img img{
+  width: 100%;
+  height: 100%;
+}
+
+.short .short_text {
+  position: relative;
+  bottom: 70px;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(0deg, #020c19 60%, 
+                                    #020c19a6 80%,
+                                    #020c1959 90%,
+                                    #020c1900 100%);
+  color: white;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: transform 0.3s;
+}
+
+.short .short_text .short_heading {
+  font-size: 23px;
+  font-weight: bold;
+  margin: 0;
+}
+  
+.short .short_text .short_description {
+  font-size: 14px;
+  margin: 5px 0 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.short:hover .short_text .short_description {
+  opacity: 1;
+}
+
+.short:hover .short_text {
+  transform: translateY(-82px);
+}
+
+/* The Modal (background) */
+.modal_container {
+  display: none;
+  position: fixed;
+  margin: auto;
+  top: 0%;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: #000000dd;
+}
+
+.modal_list{
+  display: flex;
+  width: 90%;
+  transition: transform 0.5s ease-in-out;
+  margin: auto;
+}
+
+.modal {
+  flex: 0 0 100%;
+  z-index: 2;
+  margin: auto;
+  padding: 5px;
+  max-width: 450px;
+  height: auto;
+  border-radius: 5px;
+}  
+
+.modal_img{
+  width: 100%;
+  display: flex;
+}
+
+.modal_img img {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+.modal_heading{
+  font-size: 25px;
+  font-weight: bold;
+  margin: 5px 5px 5px 5px;
+}
+
+.modal_description{
+  text-align: justify;
+  margin: 0px 5px 0px 5px;
+  line-height: 1.5;
+  
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 55px;
+  z-index: 3;
+}
+
+.close:hover,
+.close:focus {
+  color: #999;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal_prev, .modal_next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 50px;
+  transition: 0.6s ease;
+  border-radius: 3px 3px 3px 3px;
+  user-select: none;
+  z-index: 4;
+}
+
+/* Position the "next button" to the right */
+.modal_next {
+  right: 10%;
+}
+
+.modal_prev {
+  left: 10%;
+}
+
+.modal_prev:hover, .modal_next:hover {
+  background-color: #ffffff9f;
+  color: #000000;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1000px) {
+  .shorts {
+    display: block;
+    align-items: center;
+  }
+  .short {
+    min-width: 200px;
+    width: 220px;
+    height: 180px;
+    margin-bottom: 5%;
+  }
+ 
+  .slide_prev, .slide_next {
+    display: none;
+  }
+
+  .modal_prev, .modal_next {
+    display: none;
+  }
+
+}
+
+.footer{
+  padding: 10px;
+  bottom: 0px;
+  margin: none;
+  font-size: 20px;
+}
