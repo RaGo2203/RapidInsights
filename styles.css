@@ -332,6 +332,7 @@ body {
   font-size: 20px;
 }
 
+/*responsive adjustments*/
 @media screen and (max-width: 1600px) {
   .short {
     max-width: 290px;
