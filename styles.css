@@ -16,12 +16,73 @@ body {
   padding-bottom: 10px;
   padding-left: 20px;
   margin: auto;
-  font-size: 25px;
+  display: flex;
 }
 
 .logo{
+  align-self: flex-start;
+}
+
+.logo-img{
   width: 15%;
 }
+
+
+.navbar {
+  align-self: flex-end;
+  overflow: hidden;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+  color: #eee;
+  background-color: #112334;
+  padding: 14px 16px;
+  font-size: 20px;  
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: #eee;
+  color: #112334;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
 
 @media (prefers-color-scheme: light) {
   /* Light theme styles go here */
@@ -65,6 +126,16 @@ body {
     background-color: #112334;
   }
   
+    /* Style the links inside the navigation bar */
+  .topnav a {
+    color: #eee;
+  }
+
+  .topnav a:hover {
+    background-color: #eee;
+    color: #112334;
+  }
+
   .container{
     background-image: linear-gradient(#112334 30% ,#121212 90%);
   }
@@ -99,7 +170,8 @@ body {
 }
 
 .carousel_ontainer {
-  position: relative; /*nr*/
+  position: relative;
+  display: flex;
   max-width: none;
   z-index: 1;
 }
@@ -124,7 +196,7 @@ body {
   inline-size: none;
   cursor: pointer;
   position: absolute;
-  top: 465px;
+  top: 450px;
   padding-top: 100px;
   padding-bottom: 100px;
   font-size: 90px;
@@ -439,7 +511,7 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-  .logo{
+  .logo-img{
     width: 25%;
   }
 
@@ -475,7 +547,7 @@ body {
 }
 
 @media screen and (max-width: 500px) {
-  .logo{
+  .logo-img{
     width: 35%;
   }
 
